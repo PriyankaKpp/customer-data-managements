@@ -20,19 +20,19 @@ public class CustomerService {
 
     public Customer create(Customer c) {
 
-        // ✅ FIX: UUID → String
+        
         if (c.getCustomerId() == null) {
             c.setCustomerId(UUID.randomUUID().toString());
         }
 
-        // ✅ FIX: OffsetDateTime → LocalDateTime
+       
         c.setCreatedAt(LocalDateTime.now());
         c.setUpdatedAt(LocalDateTime.now());
 
         return repo.save(c);
     }
 
-    // ✅ FIX: UUID → String
+    
     public Optional<Customer> get(String id) {
         return repo.findById(id);
     }
@@ -41,7 +41,7 @@ public class CustomerService {
         return repo.findAll();
     }
 
-    // ✅ FIX: UUID → String
+    
     public Optional<Customer> update(String id, Customer patch) {
 
         return repo.findById(id).map(existing -> {
@@ -56,14 +56,14 @@ public class CustomerService {
             if (patch.getEmail() != null)
                 existing.setEmail(patch.getEmail());
 
-            // ✅ FIX: OffsetDateTime → LocalDateTime
+            
             existing.setUpdatedAt(LocalDateTime.now());
 
             return repo.save(existing);
         });
     }
 
-    // ✅ FIX: UUID → String
+    
     public void delete(String id) {
         repo.deleteById(id);
     }

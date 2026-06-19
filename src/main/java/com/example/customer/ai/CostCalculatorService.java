@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class CostCalculatorService {
 
-    // Example Claude pricing 
+    //  Claude pricing 
     private static final double INPUT_COST_PER_1K = 0.003;
     private static final double OUTPUT_COST_PER_1K = 0.006;
 

@@ -41,12 +41,12 @@ public class Customer {
     private LocalDateTime updatedAt;
 
     public Customer() {
-        this.customerId = UUID.randomUUID().toString(); // ✅ auto-generate ID
+        this.customerId = UUID.randomUUID().toString(); // 
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
     }
 
-    // ✅ Getters and setters
+    //  Getters and setters
 
     public String getCustomerId() { return customerId; }
     public void setCustomerId(String customerId) { this.customerId = customerId; }

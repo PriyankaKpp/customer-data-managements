@@ -29,7 +29,7 @@ class CustomerControllerTest {
     @MockBean
     private CustomerService svc;
 
-    // ✅ REQUIRED because controller uses them
+    //  REQUIRED because controller uses them
     @MockBean
     private TokenEstimatorService tokenEstimator;
 
@@ -54,6 +54,6 @@ class CustomerControllerTest {
                         .header("Authorization", "Bearer changeme")
                         .accept(MediaType.APPLICATION_JSON)
         )
-        .andExpect(status().isOk());   // ✅ IMPORTANT (not 404 anymore)
+        .andExpect(status().isOk());   // The controller returns 200 OK with an empty body for not found, instead of 404 Not Found
     }
 }

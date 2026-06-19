@@ -1,19 +1,73 @@
 
 
+### GET ALL CUSTOMERS
+GET http://localhost:8080/api/customers
+Authorization: Bearer my-secret-token
 
 
+### GET CUSTOMER BY ID
+GET http://localhost:8080/api/customers/550e8400-e29b-41d4-a716-446655440000
+Authorization: Bearer my-secret-token
 
 
-
-
+### CREATE CUSTOMER with minimal fields
 POST http://localhost:8080/api/customers
 Content-Type: application/json
+Authorization: Bearer my-secret-token
 
 {
   "firstName": "John",
-  "email": "john@example.com"
+  "lastName": "Doe",
+  "email": "john.doe@example.com"
 }
 
+
+### UPDATE CUSTOMER
+PUT http://localhost:8080/api/customers/550e8400-e29b-41d4-a716-446655440000
+Content-Type: application/json
+Authorization: Bearer my-secret-token
+
+{
+  "firstName": "Updated Name"
+}
+
+
+### DELETE CUSTOMER
+DELETE http://localhost:8080/api/customers/550e8400-e29b-41d4-a716-446655440000
+Authorization: Bearer my-secret-token
+
+
+
+
+### CREATE CUSTOMER
+POST http://localhost:8080/api/customers
+Content-Type: application/json
+Authorization: Bearer my-secret-token
+
+{
+  "customerId": "550e8400-e29b-41d4-a716-446655440000",
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "phone": "+441234567890",
+  "address": "123 Baker Street",
+  "city": "London",
+  "state": "Greater London",
+  "postalCode": "NW1 6XE",
+  "country": "UK",
+  "birthDate": "1990-01-01",
+  "gender": "Male",
+  "preferredLanguage": "English",
+  "timezone": "Europe/London",
+  "marketingOptIn": true,
+  "phoneVerified": true,
+  "emailVerified": false,
+  "externalId": "EXT-123456",
+  "status": "ACTIVE",
+  "metadata": "{\"source\":\"web\",\"campaign\":\"spring-sale\"}",
+  "createdAt": "2026-06-19T11:30:00",
+  "updatedAt": "2026-06-19T11:30:00"
+}
 
 
 PUT http://localhost:8080/api/customers/{id}

@@ -1,4 +1,4 @@
-/*package com.example.customer.security;
+package com.example.customer.security;
 
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpHeaders;
@@ -30,4 +30,4 @@ public class BearerAuthFilter extends OncePerRequestFilter {
         }
         filterChain.doFilter(request, response);
     }
-}*/
+}

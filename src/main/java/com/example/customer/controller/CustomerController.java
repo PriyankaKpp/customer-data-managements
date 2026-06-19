@@ -50,7 +50,7 @@ public class CustomerController {
     }
 
 
-    // ✅ GET ALL
+    //  GET ALL
     @GetMapping
     public ApiResponse<List<Customer>> list() throws Exception {
 
@@ -64,7 +64,7 @@ public class CustomerController {
         return new ApiResponse<>(customers, tokens, cost);
     }
 
-    // ✅ GET BY ID
+    //  GET BY ID
     @GetMapping("/{id}")
     public ApiResponse<Customer> get(@PathVariable String id) throws Exception {
 
@@ -81,7 +81,7 @@ public class CustomerController {
         return new ApiResponse<>(found.get(), tokens, cost);
     }
 
-    // ✅ UPDATE
+    //  UPDATE
     @PutMapping("/{id}")
     public ApiResponse<Customer> update(@PathVariable String id, @RequestBody Customer patch) throws Exception {
 
@@ -98,7 +98,7 @@ public class CustomerController {
         return new ApiResponse<>(updated.get(), tokens, cost);
     }
 
-    // ✅ DELETE
+    //  DELETE
     @DeleteMapping("/{id}")
     public ApiResponse<String> delete(@PathVariable String id) {
 
