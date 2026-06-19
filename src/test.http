@@ -1,0 +1,24 @@
+
+
+
+
+
+
+
+
+POST http://localhost:8080/api/customers
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "email": "john@example.com"
+}
+
+
+
+PUT http://localhost:8080/api/customers/{id}
+Content-Type: application/json
+
+{
+  "firstName": "Updated"
+}
